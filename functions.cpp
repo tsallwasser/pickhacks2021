@@ -37,7 +37,7 @@ bool game(const bool play, const int player)
     }
     else
     {
-        cout << "You will be player " << player+1 << ". You will move " << player+1 << ".\n";
+        cout << "You will be player " << player+1 << ". You will move first.\n";
         cout << "Your moves will be marked with an X, the enemy will mark his spaces with O." << endl;
 
 
