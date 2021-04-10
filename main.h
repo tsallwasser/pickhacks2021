@@ -4,11 +4,14 @@
 //Filename: main.h
 
 #include <iostream>
+#include <cstdlib>
 #ifndef MAIN_H
 #define MAIN_H
 using namespace std;
 
+const int MAX_MOVES = 9;
 
+bool game(const bool play, const int player);
 
 
 #endif
