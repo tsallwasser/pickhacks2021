@@ -9,7 +9,9 @@
 #define MAIN_H
 using namespace std;
 
-const int MAX_MOVES = 9;
+const int MAX_MOVES = 5;
+const int PLAYER = 88;
+const int ENEMY = 79;
 
 bool game(const bool play, const int player);
 

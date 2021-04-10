@@ -17,6 +17,7 @@ bool game(const bool play, const int player)
     int space = 49;
     int moves[MAX_MOVES];
     int move;
+    int round = 1;
     int x, y;
     int temp_move;
     for (int i = 0; i < 3; i++)
@@ -41,7 +42,7 @@ bool game(const bool play, const int player)
         for (int i = 0; i < MAX_MOVES; i++)
         {
             move = 10;
-            while ((move > MAX_MOVES) || (move <= 0))
+            while ((move > 9) || (move <= 0))
             {
                 //print board
                 for (int j = 0; j < 3; j++)
@@ -80,53 +81,66 @@ bool game(const bool play, const int player)
                 }
                 valid_move = 0;
                 
-                
-                //computer move
-                while (!valid_move)
+                if (round < MAX_MOVES)
                 {
-                    
-                    move = rand()%9;
-                    temp_move = move + 48;
-                    
-
-                    //check for open space
-                
-                    for (int j = 0; j < 3; j++)
+                    //computer move
+                    while (!valid_move)
                     {
-                        for (int k = 0; k < 3; k++)
+                        
+                        move = rand()%9;
+                        temp_move = move + 48;
+                        
+
+                        //check for open space
+                    
+                        for (int j = 0; j < 3; j++)
                         {
-                            if (board[j][k]==temp_move)
+                            for (int k = 0; k < 3; k++)
                             {
-                                board[j][k] = 79;
-                                valid_move = 1;
+                                if (board[j][k]==temp_move)
+                                {
+                                    board[j][k] = ENEMY;
+                                    valid_move = 1;
+                                }
                             }
                         }
                     }
                 }
+                
+            }
 
 
-                //check for win vertically and horizontally
-                for (int j = 0; j < 3; j++)
-                {
-                    if (board[j][1]==88 && board[j][2]==88 && board[j][0]==88 || board[0][j]==88 && board[1][j]==88 && board[2][j]==88)
-                    {
-                        win = 1;
-                        i = MAX_MOVES;
-                    }
-                    else if (board[j][1]==79 && board[j][2]==79 && board[j][0]==79 || board[0][j]==79 && board[1][j]==79 && board[2][j]==79)
-                    i = MAX_MOVES;
-                }
-                //check for win diagonally
-                if (board[0][0] == 88 && board[1][1] == 88 && board[2][2] == 88 || board[0][2] == 88 && board[1][1] == 88 && board[2][0] == 88)
+            //check for win vertically and horizontally
+            for (int j = 0; j < 3; j++)
+            {
+                if (board[j][1]==88 && board[j][2]==88 && board[j][0]==88 || board[0][j]==88 && board[1][j]==88 && board[2][j]==88)
                 {
                     win = 1;
                     i = MAX_MOVES;
                 }
-                else if (board[0][0] == 79 && board[1][1] == 79 && board[2][2] == 79 || board[0][2] == 79 && board[1][1] == 79 && board[2][0] == 79)
+                else if (board[j][1]==ENEMY && board[j][2]==ENEMY && board[j][0]==ENEMY || board[0][j]==ENEMY && board[1][j]==ENEMY && board[2][j]==ENEMY)
                 i = MAX_MOVES;
-
             }
+            //check for win diagonally
+            if (board[0][0] == PLAYER && board[1][1] == PLAYER && board[2][2] == PLAYER || board[0][2] == PLAYER && board[1][1] == PLAYER && board[2][0] == PLAYER)
+            {
+                win = 1;
+                i = MAX_MOVES;
+            }
+            else if (board[0][0] == ENEMY && board[1][1] == ENEMY && board[2][2] == ENEMY || board[0][2] == ENEMY && board[1][1] == ENEMY && board[2][0] == ENEMY)
+            i = MAX_MOVES;
+
+         round++;   
         }
+    }
+    for (int j = 0; j < 3; j++)
+    {
+        for (int k = 0; k < 3; k++)
+        {
+            cout << "| "<< board[j][k] << " ";
+        }
+        cout << "|" <<  endl;
+
     }
     return win;
 }
