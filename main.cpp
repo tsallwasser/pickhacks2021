@@ -23,5 +23,11 @@ int main()
     cout << "Your choice:\t";
     cin >> play;
     won = (game(play, player));
+    if (won)
+    {
+        cout << "Congrats on saving the world we all owe you a huge favor...maybe like 2 bagels" << endl;
+    }
+    else if (!won)
+    cout << "well now we are all dead" << endl;
 	return 0;
 }

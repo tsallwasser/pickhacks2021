@@ -38,7 +38,7 @@ bool game(const bool play, const int player)
         cout << "Your moves will be marked with an X, the enemy will mark his spaces with O." << endl;
 
 
-        for (int i = 7; i < MAX_MOVES; i++)
+        for (int i = 0; i < MAX_MOVES; i++)
         {
             move = 10;
             while ((move > MAX_MOVES) || (move <= 0))
@@ -122,7 +122,7 @@ bool game(const bool play, const int player)
                     win = 1;
                     i = MAX_MOVES;
                 }
-                else if (board[0][0] == 88 && board[1][1] == 88 && board[2][2] == 88 || board[0][2] == 88 && board[1][1] == 88 && board[2][0] == 88)
+                else if (board[0][0] == 79 && board[1][1] == 79 && board[2][2] == 79 || board[0][2] == 79 && board[1][1] == 79 && board[2][0] == 79)
                 i = MAX_MOVES;
 
             }
