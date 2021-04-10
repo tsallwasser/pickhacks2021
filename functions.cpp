@@ -156,9 +156,9 @@ bool game(const bool play, const int player)
     return win;
 }
 
-bool intro()
+int intro()
 {
-    bool temp;
+    int temp;
     cout << "Welcome to my project for Pickhacks 2021!" << endl;
     cout << "This is a very important game for you to play. Failure here could lead to GLOBAL DISASTER!\n";
     cout << "Killer bagels have invaded earth and destroyed all of the other computers and only yours remains.\n";
@@ -172,7 +172,7 @@ bool intro()
 
 void play()
 {
-    bool play;
+    int play;
     bool won;
     int player = 0;   //rand()%2;
     
@@ -181,6 +181,8 @@ void play()
     {
         cout << "We are doomed because you wouldn't even try!" << endl;
     }
+    else if (play == 42)
+    cout << "\"There is a theory which states that if ever anyone discovers exactly what the Universe is for and why it is here, it will instantly disappear and be replaced by something even more bizarre and inexplicable. \nThere is another theory which states that this has already happened.\"-Hitchhikers Guide to the Galaxy" << endl;
     else
     {
         won = (game(play, player));

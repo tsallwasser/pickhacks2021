@@ -14,6 +14,6 @@ const int PLAYER = 88;
 const int ENEMY = 79;
 
 bool game(const bool play, const int player);
-bool intro();
+int intro();
 void play();
 #endif
