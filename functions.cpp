@@ -144,3 +144,32 @@ bool game(const bool play, const int player)
     }
     return win;
 }
+
+bool intro()
+{
+    bool temp;
+    cout << "Welcome to my project for Pickhacks 2021!" << endl;
+    cout << "This is a very important game for you to play. Failure here could lead to GLOBAL DISASTER!\n";
+    cout << "Anything but absolute victory will leed to destruction. The fate of the world is in your hands.\n";
+    cout << "To accept this challenge please enter 1. To quit now and run for your life, enter 0.\n";
+    cout << "Your choice:\t";
+    cin >> temp;
+    return temp;
+}
+
+void play()
+{
+    bool play;
+    bool won;
+    int player = 0;   //rand()%2;
+    
+    play = intro();
+    won = (game(play, player));
+    if (won)
+    {
+        cout << "Congrats on saving the world we all owe you a huge favor...maybe like 2 bagels" << endl;
+    }
+    else if (!won)
+    cout << "well now we are all dead" << endl;
+	return;
+}
