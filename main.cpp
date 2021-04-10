@@ -11,7 +11,7 @@ int main()
 {
     bool play;
     bool won;
-    int player = rand()%2;
+    int player = 0;   //rand()%2;
 
 
 
