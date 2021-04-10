@@ -1,2 +1,2 @@
 # pickhacks2021
-This will eventually be my submission for pickhacks 2021.
+I just wanted to create something simple that I had some idea how to do. I have not done much coding recently so this was a nice way that I could revisit my skills and give myself a challenge. I did not do anything fancy but hey I got it to work the way I wanted to and that is what is important to me.

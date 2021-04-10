@@ -5,11 +5,13 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 #include "main.h"
 using namespace std;
 
 bool game(const bool play, const int player)
 {
+    srand(time(NULL));
     bool valid_move;
     bool game_over = 0;
     bool win = 0;
@@ -88,7 +90,7 @@ bool game(const bool play, const int player)
                     {
                         
                         move = rand()%9;
-                        temp_move = move + 48;
+                        temp_move = move + 49;
                         
 
                         //check for open space
@@ -150,6 +152,8 @@ bool intro()
     bool temp;
     cout << "Welcome to my project for Pickhacks 2021!" << endl;
     cout << "This is a very important game for you to play. Failure here could lead to GLOBAL DISASTER!\n";
+    cout << "Killer bagels have invaded earth and destroyed all of the other computers and only yours remains.\n";
+    cout << "You must compete in an epic digital battle against them to save humanity.\n";
     cout << "Anything but absolute victory will leed to destruction. The fate of the world is in your hands.\n";
     cout << "To accept this challenge please enter 1. To quit now and run for your life, enter 0.\n";
     cout << "Your choice:\t";
@@ -167,9 +171,9 @@ void play()
     won = (game(play, player));
     if (won)
     {
-        cout << "Congrats on saving the world we all owe you a huge favor...maybe like 2 bagels" << endl;
+        cout << "Congrats on saving the world we all owe you a huge favor...maybe like 2 bagels." << endl;
     }
     else if (!won)
-    cout << "well now we are all dead" << endl;
+    cout << "OH NO! THE BAGELS ARE GONNA GET US ALL! ITS EVERY HACKER FOR THEMSELF!" << endl;
 	return;
 }
