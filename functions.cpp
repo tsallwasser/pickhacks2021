@@ -168,12 +168,19 @@ void play()
     int player = 0;   //rand()%2;
     
     play = intro();
-    won = (game(play, player));
-    if (won)
+    if (!play)
     {
-        cout << "Congrats on saving the world we all owe you a huge favor...maybe like 2 bagels." << endl;
+        cout << "We are doomed because you wouldn't even try!" << endl;
     }
-    else if (!won)
-    cout << "OH NO! THE BAGELS ARE GONNA GET US ALL! ITS EVERY HACKER FOR THEMSELF!" << endl;
+    else
+    {
+        won = (game(play, player));
+        if (won)
+        {
+            cout << "Congrats on saving the world we all owe you a huge favor...maybe like 2 bagels." << endl;
+        }
+        else if (!won)
+        cout << "OH NO! THE BAGELS ARE GONNA GET US ALL! ITS EVERY HACKER FOR THEMSELF!" << endl;
+    }
 	return;
 }
