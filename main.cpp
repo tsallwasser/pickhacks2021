@@ -18,6 +18,7 @@ int main()
 
     cout << "Welcome to my project for Pickhacks 2021!" << endl;
     cout << "This is a very important game for you to play. Failure here could lead to GLOBAL DISASTER!\n";
+    cout << "Anything but absolute victory will leed to destruction. The fate of the world is in your hands.\n"
     cout << "To accept this challenge please enter 1. To quit now and run for your life, enter 0.\n";
     cout << "Your choice:\t";
     cin >> play;
