@@ -114,7 +114,6 @@ bool game(const bool play, const int player)
                 }
                 else if (board[j][1]==79 && board[j][2]==79 && board[j][0]==79 || board[0][j]==79 && board[1][j]==79 && board[2][j]==79)
                 i = MAX_MOVES;
-
             }
         }
     }
