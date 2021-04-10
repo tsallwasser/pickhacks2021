@@ -117,7 +117,13 @@ bool game(const bool play, const int player)
                     i = MAX_MOVES;
                 }
                 //check for win diagonally
-                if (board[0][0] == 88 && board[1][1] == 88 && board[2][2] == 88)
+                if (board[0][0] == 88 && board[1][1] == 88 && board[2][2] == 88 || board[0][2] == 88 && board[1][1] == 88 && board[2][0] == 88)
+                {
+                    win = 1;
+                    i = MAX_MOVES;
+                }
+                else if (board[0][0] == 88 && board[1][1] == 88 && board[2][2] == 88 || board[0][2] == 88 && board[1][1] == 88 && board[2][0] == 88)
+                i = MAX_MOVES;
 
             }
         }
