@@ -115,13 +115,22 @@ bool game(const bool play, const int player)
             //check for win vertically and horizontally
             for (int j = 0; j < 3; j++)
             {
-                if (board[j][1]==88 && board[j][2]==88 && board[j][0]==88 || board[0][j]==88 && board[1][j]==88 && board[2][j]==88)
+                if (board[j][1]==88 && board[j][2]==88 && board[j][0]==88)
                 {
                     win = 1;
                     i = MAX_MOVES;
                 }
-                else if (board[j][1]==ENEMY && board[j][2]==ENEMY && board[j][0]==ENEMY || board[0][j]==ENEMY && board[1][j]==ENEMY && board[2][j]==ENEMY)
+                else if (board[j][1]==ENEMY && board[j][2]==ENEMY && board[j][0]==ENEMY)
                 i = MAX_MOVES;
+
+                if (board[0][j]==88 && board[1][j]==88 && board[2][j]==88)
+                {
+                    win = 1;
+                    i = MAX_MOVES;
+                }
+                else if (board[0][j]==ENEMY && board[1][j]==ENEMY && board[2][j]==ENEMY)
+                i = MAX_MOVES;
+                
             }
             //check for win diagonally
             if (board[0][0] == PLAYER && board[1][1] == PLAYER && board[2][2] == PLAYER || board[0][2] == PLAYER && board[1][1] == PLAYER && board[2][0] == PLAYER)
@@ -180,7 +189,7 @@ void play()
             cout << "Congrats on saving the world we all owe you a huge favor...maybe like 2 bagels." << endl;
         }
         else if (!won)
-        cout << "OH NO! THE BAGELS ARE GONNA GET US ALL! ITS EVERY HACKER FOR THEMSELF!" << endl;
+        cout << "OH NO! THE BAGELS ARE GONNA GET US ALL! ITS EVERY HACKER FOR THEMSELF! GOODBYE CRUEL WORLD!!!!" << endl;
     }
 	return;
 }
