@@ -83,7 +83,7 @@ bool game(const bool play, const int player)
                 }
                 valid_move = 0;
                 
-                if (round < MAX_MOVES)
+                if (round < MAX_MOVES-1)
                 {
                     //computer move
                     while (!valid_move)
